@@ -1,0 +1,288 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #a52d2d; /* Grey color for the header */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Aligns items on opposite sides */
+    align-items: center; /* Vertically centers items */
+    
+}
+
+.logo {
+    flex: 1; /* Takes up remaining space */
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding-right:50px;
+    margin: 0;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-end; /* Align items to the end of container */
+}
+
+.nav-links li {
+    display: inline-block; /* Display links horizontally */
+    margin-left: 50px; /* Adjust spacing between links */
+}
+
+.nav-links li:first-child {
+    margin-left: 0; /* Remove margin for the first link */
+}
+
+.nav-links li a {
+    
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* End of Header CSS*/
+
+/*Picture Dev*/
+/* CSS for main content */
+.main-content {
+    text-align:left ;
+}
+
+.image-container {
+    max-width: 1200px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    overflow: hidden;
+    position: relative; /* Ensure the container is positioned relative */
+}
+
+.standard-image {
+    width: 100%; /* Make the image fill the container */
+    height: 600px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure the image covers the container */
+    display: block; /* Ensure the image is displayed as a block element */
+    filter: brightness(70%);
+}
+
+
+.image-text {
+    
+    position: absolute;
+    top: 61%; /* Position the text vertically centered */
+    left: 50%; /* Position the text horizontally centered */
+    transform: translate(-50%, -50%); /* Center the text */
+    color: #f7f7f7; /* Text color */
+
+}
+
+.image-text h2 {
+    align-items: center;
+    font-size: 52px; /* Font size for the heading */
+    margin-bottom: 20px; /* Bottom margin for the heading */
+    font-weight: bolder; /* Font weight for the heading */
+    
+}
+
+.image-text p {
+    font-size: 18px; /* Font size for the paragraph */
+    line-height: 1.5; /* Line height for the paragraph */
+}
+
+/* CSS for the chart-div container */
+.chart-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a52d2d;
+}
+
+/* CSS for the text side */
+.chart-div .text-side {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.chart-div .text-side h1 {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bolder;
+    color: #fafafa;
+    
+}
+
+/* CSS for the image side */
+.chart-div .image-side {
+    flex: 1;
+    padding: 20px;
+    margin-left: 90px;
+}
+
+.chart-div .image-side img {
+    max-width: 100%; /* Ensure the image fits the div */
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    
+}
+/* CSS for the find blood button */
+.find-blood-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 50px;
+    background-color: #ffffff; /* Button background color */
+    color: #811414; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 4px; /* Add some border radius for rounded corners */
+    font-weight: bold; /* Make the button text bold */
+}
+
+.find-blood-button:hover {
+    background-color: #c2513d; /* Button background color on hover */
+    color: beige;
+}
+
+/* CSS for blog-posts-container */
+.blog-posts-container {
+    display: flex;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    justify-content: center; /* Center the blog posts horizontally */
+    background-color: #fff; /* White background */
+    padding: 20px;
+}
+
+/* CSS for individual blog post */
+.blog-post {
+    width: 30%; /* Adjust width as needed */
+    height: 400px;
+    padding: 30px;
+    background-color: #a52d2d;
+    text-align: center;
+    margin: 20px 10px; /* Add space between posts */
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 10px;
+}
+.blog-post:hover {
+    transform: translateY(-5px); /* Pop up effect */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post img {
+    max-width: 100%;
+    max-height: 150%;
+    margin-bottom: 10px;
+    object-fit: cover; 
+}
+
+.blog-post h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f7f7f7;
+}
+
+.blog-post p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #fafafa;
+}
+
+/* CSS for the "Learn More" button */
+.learn-more {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    color: #a52d2d;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.learn-more:hover {
+    background-color: #c2513d;
+    color: #ffffff;
+}
+
+/* CSS for the background-div */
+.background-div {
+    position: relative;
+    height: 600px; /* Adjust height as needed */
+    background-image: url('Background\ Div\ pic.jpg'); /* Specify the path to your background image */
+    background-size: cover;
+    background-attachment: fixed; /* Background image stays in place when scrolling */
+    filter: brightness(50%); /* Dim the picture using filter */
+    text-align: center;
+    color: #fff; /* Text color */
+}
+
+/* CSS for the quote */
+.quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.quote h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quote p {
+    font-size: 18px;
+}
+
+/* CSS for the footer */
+
+.footer {
+    background-color: #ffffff; /* Footer background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+/* CSS for the navigation bar */
+.footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer nav ul li {
+    display: inline;
+    margin-right: 20px; /* Add margin between navigation items */
+}
+
+.footer nav ul li a {
+    color: #a52d2d;
+    text-decoration: none;
+}
+
+.footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.Credits {
+    color: #a52d2d;
+    margin-top: 100px; /* Add space between copyright and credits */
+    
+}   
+/* CSS for the copyright notice */
+.copyright {
+    margin-top: 10px; /* Add space between navigation and copyright */
+    color: #a52d2d;
+}
+
+/* CSS for the credits */
+

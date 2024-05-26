@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="RecipientForm.css">
+    <title>Recipient Form - BloodServe</title>
+</head>
+<body>
+    <!--Header & Nav Bar-->
+    <header class="header">
+        <h1>Blood-Serve</h1>
+        <ul class="nav-links">
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="About-Us.html">About Us</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a id="logout-link" class="dropdown-item" href="http://127.0.0.1:5500/login.html">Log-out</a></li>
+
+        </ul>
+    </header>
+
+    <!-- Welcome User -->
+    <div class="welcome-container text-center mt-5 pt-5">
+        <h2>Welcome User</h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="centered-content">
+            <h1>Recipient Information</h1>
+            <form id="recipientForm" action="/recipient" method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" name="age" placeholder="Age">
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="gender" id="gender">
+                        <option value="" disabled selected>Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="blood_type">
+                        <option selected disabled>Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="contact_info" placeholder="Contact Info">
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <div id="successMessage" class="d-none mt-3 alert alert-success" role="alert">
+                Recipient data submitted successfully
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer mt-auto py-3 bg-light">
+        <nav class="text-center">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="MainPage.html">Home</a></li>
+                <li class="list-inline-item"><a href="login.html">Login</a></li>
+                <li class="list-inline-item"><a href="About-Us.html">About Us</a></li>
+                <li class="list-inline-item"><a href="Blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Credits: Abdul Wahab, Hiba Rizwan, Hafsa Waseem</p>
+            <p>&copy; 2024 BloodServe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('recipientForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Create a FormData object to easily access form values
+            const formData = new FormData(event.target);
+
+            // Convert FormData to a JSON object
+            const formDataJSON = {};
+            formData.forEach((value, key) => {
+                formDataJSON[key] = value;
+            });
+
+            // Send the POST request using fetch
+            fetch('http://localhost:10000/recipient', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formDataJSON)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                document.getElementById('successMessage').classList.remove('d-none'); // Show success message
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                // Optionally handle success, e.g., display a success message or redirect
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Optionally handle errors, e.g., display an error message
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFyJDd6j2vL6boUs4Ie7KNg6B5owJp2JJ4xCMGiw1FfJIl2x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/RecipientSearch.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="RecipientForm.css">
+    <title>Recipient Form - BloodServe</title>
+</head>
+<body>
+  
+    <header class="header">
+        <h1>Blood-Serve</h1>
+        <ul class="nav-links">
+            <li><a href="MainPage.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="About-Us.html">About Us</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+        </ul>
+    </header>
+
+ 
+    <div class="welcome-container text-center mt-5 pt-5">
+        <h2>Welcome User</h2>
+    </div>
+
+
+    <div class="main-content">
+        <div class="centered-content">
+            <h1>Recipient Information</h1>
+            <form id="recipientForm" action="/recipient" method="post">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+                <div class="mb-3">
+                    <input type="number" class="form-control" name="age" placeholder="Age">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="gender" placeholder="Gender"></input>
+                       this select query is commented <select class="form-select" name="Gender">
+                        <option selected disabled>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select> 
+
+
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="blood_type">
+                        <option selected disabled>Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="contact_info" placeholder="Contact Info">
+                </div>
+                <button type="submit" class="btn btn-success">Register as Donor</button>
+            </form>
+        </div>
+    </div>
+
+   
+    
+    <footer class="footer mt-auto py-3 bg-light">
+        <nav class="text-center">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="MainPage.html">Home</a></li>
+                <li class="list-inline-item"><a href="login.html">Login</a></li>
+                <li class="list-inline-item"><a href="About-Us.html">About Us</a></li>
+                <li class="list-inline-item"><a href="Blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+        <div class="text-center">
+            <p>Credits: Abdul Wahab, Hiba Rizwan, Hafsa Waseem</p>
+            <p>&copy; 2024 BloodServe. All Rights Reserved.</p>
+        </div>
+    </footer>
+ -->
+
+<!--     
+    <script>
+        document.getElementById('recipientForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Create a FormData object to easily access form values
+            const formData = new FormData(event.target);
+
+            // Convert FormData to a JSON object
+            const formDataJSON = {};
+            formData.forEach((value, key) => {
+                formDataJSON[key] = value;
+            });
+
+            // Send the POST request using fetch
+            fetch('http://localhost:10000/recipient', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formDataJSON)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Optionally handle success, e.g., display a success message or redirect
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Optionally handle errors, e.g., display an error message
+            });
+        });
+    </script> -->
+    <!-- <script>
+        document.getElementById('recipientForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Create a FormData object to easily access form values
+            const formData = new FormData(event.target);
+
+            // Convert FormData to a JSON object
+            const formDataJSON = {};
+            formData.forEach((value, key) => {
+                formDataJSON[key] = value;
+            });
+
+            // Send the POST request using fetch
+            fetch('http://localhost:10000/recipient', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formDataJSON)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Optionally handle success, e.g., display a success message or redirect
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Optionally handle errors, e.g., display an error message
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFyJDd6j2vL6boUs4Ie7KNg6B5owJp2JJ4xCMGiw1FfJIl2x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/RecipientSearch.js"></script>
+</body>
+</html> -->

@@ -1,0 +1,175 @@
+/* CSS for the header */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('Background Div pic.jpg'); /* Add your background image here */
+    background-size: cover;
+    background-attachment: fixed; /* Fixed background image */
+    background-position: center;
+   
+}
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh; /* Ensure it covers the full height of the viewport */
+    padding: 60px 0; /* Adjust based on the height of your header and footer */
+}
+.header {
+    background-color: #a52d2d; /* Grey color for the header */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Aligns items on opposite sides */
+    align-items: center; /* Vertically centers items */
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding-right: 50px;
+    margin: 0;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-end; /* Align items to the end of container */
+}
+
+.nav-links li {
+    display: inline-block; /* Display links horizontally */
+    margin-left: 50px; /* Adjust spacing between links */
+}
+
+.nav-links li:first-child {
+    margin-left: 0; /* Remove margin for the first link */
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* CSS for the blog posts */
+.blogs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+}
+
+.blog-post {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.747);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    overflow: hidden;
+    max-height: 100px;
+    position: relative;
+    padding-bottom: 200px; /* Ensure space for the button */
+}
+p {
+    text-align: justify;
+}
+
+.blog-post.expanded {
+    max-height: 1000px;
+    padding-bottom: 60px; /* Ensure space for the button */
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.blog-post.expanded img {
+    display: block;
+}
+
+.blog-post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #a52d2d;
+}
+
+.blog-post p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.extend-btn {
+    box-shadow: none;
+    display: block;
+    width: 110px;
+    padding: 6px 20px;
+    background-color:#a52d2d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px; 
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 10px; /* Align at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.extend-btn:hover {
+    background-color: #c2513d;
+}
+
+/* CSS for the footer */
+.footer {
+    background-color: #ffffff; /* Footer background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    font-weight: bolder;
+}
+
+.footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+.footer nav ul li {
+    display: inline;
+    margin-right: 20px; /* Add margin between navigation items */
+}
+
+.footer nav ul li a {
+    color: #a52d2d;
+    text-decoration: none;
+}
+
+.footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.Credits {
+    color: #a52d2d;
+    margin-top: 100px; /* Add space between copyright and credits */
+    text-align: center;
+    padding-left: 450px;
+}
+
+.copyright {
+    margin-top: 10px; /* Add space between navigation and copyright */
+    color: #a52d2d;
+    text-align: center;
+    padding-left: 490px;
+}

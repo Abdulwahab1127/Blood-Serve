@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Background Div pic.jpg'); /* Add the path to your image here */
+    background-size: cover;
+    background-attachment: fixed; /* Fixed background image */
+    background-position: center;
+}
+
+.header {
+    background-color: #a52d2d; /* Grey color for the header */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Aligns items on opposite sides */
+    align-items: center; /* Vertically centers items */
+}
+
+.header h1 {
+    margin: 0;
+
+}
+
+.nav-links {
+    list-style: none;
+    padding-right: 50px;
+    margin: 0;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-end; /* Align items to the end of container */
+}
+
+.nav-links li {
+    display: inline-block; /* Display links horizontally */
+    margin-left: 50px; /* Adjust spacing between links */
+}
+
+.nav-links li:first-child {
+    margin-left: 0; /* Remove margin for the first link */
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
+    padding: 60px 0; /* Adjust based on the height of your header and footer */
+}
+
+.container {
+    
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    align-items: center;
+}
+.headerWelcome{
+    text-align:center;
+    color: #a52d2d;
+    background-color:transparent;
+
+}
+
+.choice {
+    text-align: center;
+}
+
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #a52d2d;
+    color: #fff;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #c2513d;
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a52d2d;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #c2513d;
+}
+
+.footer {
+    background-color: #ffffff; /* Footer background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer nav ul li {
+    display: inline;
+    margin-right: 20px; /* Add margin between navigation items */
+}
+
+.footer nav ul li a {
+    color: #a52d2d;
+    text-decoration: none;
+}
+
+.footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.Credits {
+    color: #a52d2d;
+    margin-top: 100px; /* Add space between copyright and credits */
+}
+
+.copyright {
+    margin-top: 10px; /* Add space between navigation and copyright */
+    color: #a52d2d;
+}

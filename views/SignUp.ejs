@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+    <h1>Signup</h1>
+    <% if (errors.length > 0) { %>
+        <ul>
+            <% errors.forEach(error => { %>
+                <li style="color: red;"><%= error.message %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+    <form action="/signup" method="POST">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <div>
+            <label for="userType">User Type:</label>
+            <select name="userType" required>
+                <option value="donor">Donor</option>
+                <option value="recipient">Recipient</option>
+                <option value="administrator">Administrator</option>
+            </select>
+        </div>
+        <button type="submit">Signup</button>
+    </form>
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+  <form action="/signup" method="POST">
+   
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <select name="userType">
+      <option value="donor">Donor</option>
+      <option value="recipient">Recipient</option>
+      <option value="administrator">Administrator</option>
+    </select>
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <script>
+    // Check for errors passed from the server
+    <% if (errors && errors.length > 0) { %>
+      <% errors.forEach(function(error) { %>
+        alert("<%= error %>");
+      <% }) %>
+    <% } %>
+  </script>
+</body>
+</html> -->
+
+
+
+<!-- signup.ejs -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h1>Signup</h1>
+    <form action="/signup" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <div id="passwordError" style="color: red;"></div>
+        <br>
+        <label for="userType">User Type:</label>
+        <input type="text" name="userType" id="userType" required>
+        <br>
+        <button type="submit">Signup</button>
+    </form>
+
+    <script>
+        // Client-side JavaScript for displaying password error message
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('passwordError');
+
+        passwordInput.addEventListener('input', function() {
+            if (passwordInput.value.length < 6) {
+                passwordError.innerText = 'Password should be greater than 5 characters!';
+            } else {
+                passwordError.innerText = '';
+            }
+        });
+    </script>
+</body>
+</html> -->
